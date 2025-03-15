@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BsArrowDownRight } from "react-icons/bs";
 type FooterNavItem = {
   href?: string; // href is optional since locations don't have it
   name: string;
@@ -107,9 +108,9 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="gap-10 justify-between lg:flex p-3">
           <div className="">
-            <div className="max-w-xs">
+            <div className="w-full sm:max-w-sm xl:max-w-xl">
               <img src="https://www.floatui.com/logo.svg" className="w-32" />
-              <p className="leading-relaxed mt-2 text-[15px]">
+              <p className="leading-relaxed mt-2 text-justify text-[15px]">
               Softronixs is a top-rated & Best Software Development, Website Design & Development, Digital Marketing, and Graphics Service Solution Company serving worldwide. Softronixs ensures the quality of your service to make you satisfied. 
               </p>
             </div>
@@ -127,7 +128,7 @@ const Footer = () => {
               </div>
             </form>
           </div>
-          <div className="flex-1 mt-10 space-y-6  justify-between sm:flex md:space-y-0 md:mt-0">
+          <div className=" mt-10 space-y-6  justify-between sm:flex md:space-y-0 md:mt-0 md:gap-4">
             {footerNavs.map((item, idx) => (
               <ul className="space-y-4" key={idx}>
                 <h4 className="text-primaryWhite font-semibold w-32">
@@ -138,8 +139,9 @@ const Footer = () => {
                     {el?.href ? (
                       <Link
                         href={el.href}
-                        className="hover:underline hover:text-primaryPurple"
+                        className="hover:underline flex  hover:text-primaryPurple gap-1"
                       >
+                        <BsArrowDownRight className="text-primaryPurple mt-1 text-md"></BsArrowDownRight>
                         {el.name}
                       </Link>
                     ) : (
