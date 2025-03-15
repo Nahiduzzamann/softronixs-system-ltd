@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BsArrowDownRight } from "react-icons/bs";
+import { CgArrowRight } from "react-icons/cg";
 type FooterNavItem = {
   href?: string; // href is optional since locations don't have it
   name: string;
@@ -108,7 +108,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="gap-10 justify-between lg:flex p-3">
           <div className="">
-            <div className="w-full sm:max-w-sm xl:max-w-xl">
+            <div className="w-full lg:max-w-sm xl:max-w-xl">
               <img src="https://www.floatui.com/logo.svg" className="w-32" />
               <p className="leading-relaxed mt-2 text-justify text-[15px]">
               Softronixs is a top-rated & Best Software Development, Website Design & Development, Digital Marketing, and Graphics Service Solution Company serving worldwide. Softronixs ensures the quality of your service to make you satisfied. 
@@ -120,7 +120,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full p-2.5 outline-none"
+                  className="w-full text-secondaryBlack p-2.5 outline-none"
                 />
                 <button className="p-2.5 rounded-md text-secondaryBlack hover:text-primaryWhite bg-primarySky hover:bg-primaryYellow transition-colors duration-300 outline-none shadow-md focus:shadow-none sm:px-5">
                   Subscribe
@@ -128,7 +128,7 @@ const Footer = () => {
               </div>
             </form>
           </div>
-          <div className=" mt-10 space-y-6  justify-between sm:flex md:space-y-0 md:mt-0 md:gap-4">
+          <div className=" pt-10 lg:pt-0 space-y-6  justify-between sm:flex md:space-y-0 md:mt-0 md:gap-4">
             {footerNavs.map((item, idx) => (
               <ul className="space-y-4" key={idx}>
                 <h4 className="text-primaryWhite font-semibold w-32">
@@ -141,7 +141,7 @@ const Footer = () => {
                         href={el.href}
                         className="hover:underline flex  hover:text-primaryPurple gap-1"
                       >
-                        <BsArrowDownRight className="text-primaryPurple mt-1 text-md"></BsArrowDownRight>
+                        <CgArrowRight className="text-primaryPurple mt-1 text-md"></CgArrowRight>
                         {el.name}
                       </Link>
                     ) : (
