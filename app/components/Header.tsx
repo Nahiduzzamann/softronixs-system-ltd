@@ -129,14 +129,14 @@ const Header = () => {
                     )}
                   </Link>
                   {link.dropdown && (
-                    <ul className="absolute -left-8 hidden group-hover:block bg-primarySky  shadow-lg rounded-md pt-4 ">
+                    <ul className="absolute -left-8 hidden group-hover:block bg-primaryWhite  shadow-lg rounded-md pt-4 ">
                       {link.dropdown.map((item) => (
                         <li className="w-48 hover:underline" key={item}>
                           <Link
                             href={`${link.href}/${item
                               .toLowerCase()
                               .replace(" ", "-")}`}
-                            className="block px-4 py-2 hover:bg-primaryYellow  text-primaryBlack transition-colors duration-300  "
+                            className="block px-4 py-2 hover:bg-primaryPurple  text-primaryBlack hover:text-primaryWhite transition-colors duration-300  "
                           >
                             {item}
                           </Link>
