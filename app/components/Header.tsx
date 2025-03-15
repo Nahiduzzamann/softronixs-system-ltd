@@ -63,7 +63,7 @@ const Header = () => {
             ? { type: "spring", stiffness: 100, damping: 30 }
             : { type: "spring", stiffness: 30 }
         }
-        className={`bg-yellow  z-50 w-full ${
+        className={`bg-primarySky  z-50 w-full ${
           pathname === "/pages/Login" || pathname === "/pages/SignUp"
             ? ""
             : "fixed top-0 "
@@ -78,18 +78,18 @@ const Header = () => {
             /> */}
             Logo
           </Link>
-          <div className="relative border border-white mx-2 h-9">
+          <div className="relative border border-primaryWhite mx-2 h-9">
             <input
               type="text"
               placeholder="What are you looking for today?"
-              className="h-full bg-lightWhite  pl-2 pr-10 lg:w-96 w-full text-darkBlack    outline-none"
+              className="h-full bg-lightWhite  pl-2 pr-10 lg:w-96 w-full text-secondaryBlack  outline-none"
             />
-            <button className="absolute right-0 top-0 bg-yellow  h-full w-8 flex justify-center items-center hover:bg-goldenYellow transition-colors duration-300">
-              <FaSearch className=" text-lightWhite " />
+            <button className="absolute right-0 top-0 bg-primaryYellow  h-full w-8 flex justify-center items-center hover:bg-primaryPurple transition-colors duration-300">
+              <FaSearch className=" text-primaryWhite " />
             </button>
           </div>
           <Link href="/">
-            <button className="bg-lightWhite  text-darkBlack   px-4 py-1 rounded-full hover:bg-goldenYellow  transition-colors duration-300 font-semibold hover:underline">
+            <button className="bg-primaryWhite  text-primaryBlack hover:text-primaryWhite px-4 py-1 rounded-full hover:bg-primaryYellow  transition-colors duration-300 font-semibold">
               Contact
             </button>
           </Link>
@@ -104,14 +104,10 @@ const Header = () => {
             ? { type: "spring", stiffness: 20 }
             : { type: "spring", stiffness: 70 }
         }
-        className={` bg-lightWhite  z-50 w-full ${
-          pathname === "/pages/Login" || pathname === "/pages/SignUp"
-            ? ""
-            : "fixed top-[60px] "
-        }  ${showShadow && "shadow-md"}`}
+        className={` bg-primaryBlack  z-50 w-full fixed top-[60px]  ${showShadow && "shadow-md"}`}
       >
         <div className="container mx-auto flex justify-between items-center px-3 md:h-[70px] h-[50px]">
-          <Link className="hidden md:block" href="/">
+          <Link className="hidden md:block text-primaryWhite" href="/">
             {/* <Image
               src={logo}
               alt="Logo"
@@ -119,7 +115,7 @@ const Header = () => {
             /> */}
             Logo
           </Link>
-          <Link className="md:hidden h-10 w-28" href="/">
+          <Link className="md:hidden h-10 w-28 text-primaryWhite" href="/">
             {/* <Image src={logo1} alt="Logo" className="cursor-pointer"
              /> */}
             logo
@@ -130,7 +126,7 @@ const Header = () => {
                 <li key={link.name} className="relative group">
                   <Link
                     href={link.href}
-                    className="text-darkBlack    font-semibold hover:text-goldenYellow"
+                    className="text-primaryWhite  font-semibold hover:text-primaryYellow"
                   >
                     {link.name}
                     {link.dropdown && (
@@ -138,14 +134,14 @@ const Header = () => {
                     )}
                   </Link>
                   {link.dropdown && (
-                    <ul className="absolute -left-8 hidden group-hover:block bg-lightWhite  shadow-lg rounded-md pt-4 ">
+                    <ul className="absolute -left-8 hidden group-hover:block bg-primarySky  shadow-lg rounded-md pt-4 ">
                       {link.dropdown.map((item) => (
                         <li className="w-36 hover:underline" key={item}>
                           <Link
                             href={`${link.href}/${item
                               .toLowerCase()
                               .replace(" ", "-")}`}
-                            className="block px-4 py-2 hover:bg-lightGray  text-darkBlack   "
+                            className="block px-4 py-2 hover:bg-primaryYellow  text-primaryBlack transition-colors duration-300  "
                           >
                             {item}
                           </Link>
@@ -161,14 +157,14 @@ const Header = () => {
             <div className="md:hidden">
               <FaXmark
                 onClick={toggleSidebar}
-                className="h-6 w-6 hover:scale-110 transition-transform duration-300 cursor-pointer text-darkBlack   "
+                className="h-6 w-6 hover:scale-110 transition-transform duration-300 cursor-pointer text-primaryWhite   "
               />
             </div>
           ) : (
             <div className="md:hidden">
               <FaAlignRight
                 onClick={toggleSidebar}
-                className="h-6 w-6 hover:scale-110 transition-transform duration-300 cursor-pointer text-darkBlack   "
+                className="h-6 w-6 hover:scale-110 transition-transform duration-300 cursor-pointer text-primaryWhite   "
               />
             </div>
           )}
@@ -183,12 +179,22 @@ const Header = () => {
 
 export default Header;
 const Sidebar = ({ isOpen, toggleSidebar }) => {
+  const linkVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.1 * index, duration: 0.3 },
+    }),
+  };
+  // Links array
+  const links = ["Home", "About", "Services", "Contact"];
   return (
     <>
       {/* Overlay - Click outside to close */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed inset-0 bg-primaryBlack bg-opacity-50 z-40"
           onClick={toggleSidebar}
         />
       )}
@@ -198,20 +204,28 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="fixed top-0 left-0 h-full w-64 bg-white shadow-xl z-50 p-5"
+        className="fixed top-0 left-0 h-full w-64 bg-primarySky shadow-xl z-50 p-5"
       >
         {/* Close Button */}
         <button onClick={toggleSidebar} className="absolute top-4 right-4">
-          <div className="text-gray-600 text-xl font-light">X</div>
+          <div className="text-primaryBlack text-xl font-light">X</div>
         </button>
 
         {/* Sidebar Content */}
         <div className="mt-10">
           <ul className="space-y-4 text-lg">
-            <li className="cursor-pointer hover:text-blue-500">Home</li>
-            <li className="cursor-pointer hover:text-blue-500">About</li>
-            <li className="cursor-pointer hover:text-blue-500">Services</li>
-            <li className="cursor-pointer hover:text-blue-500">Contact</li>
+            {links.map((link, index) => (
+              <motion.li
+                key={link}
+                custom={index}
+                initial="hidden"
+                animate={isOpen ? "visible" : "hidden"}
+                variants={linkVariants}
+                className="cursor-pointer text-primaryWhite hover:text-primaryPurple transition-colors duration-300"
+              >
+                {link}
+              </motion.li>
+            ))}
           </ul>
         </div>
       </motion.div>

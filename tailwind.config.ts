@@ -9,11 +9,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        darkBlack : '#1A1A19',   // Dark Black
-        yellow : '#F9BE08',      // Yellow
-        lightWhite : '#F9F8F4',   // Light White
-        lightGray : '#DFDFD9',   // Light Gray
-        goldenYellow: '#EFD30B',       // Golden Yellow
+        primarySky: "#00aaef", //
+        primaryBlack: "#111111", //
+        secondaryBlack: "#212529", //
+        primaryGray: "#797979", //
+        primaryYellow: "#f6c60d", //
+        primaryWhite: "#FFFFFF", //
+        primaryOrange: "#eb6c40", //
+        primaryPurple: "#bd4cec", //
       },
     },
   },
