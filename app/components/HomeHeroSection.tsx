@@ -6,13 +6,13 @@ import Link from "next/link";
 const HomeHeroSection = () => {
   return (
     <div className=" bg-secondaryBlack text-primaryWhite pt-16">
-      <div className="container mx-auto p-3 flex flex-col md:flex-row items-center justify-between ">
+      <div className="container mx-auto p-3 gap-4 flex flex-col md:flex-row items-center justify-between ">
         {/* Text Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-lg"
+          className="md:w-[60%]"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-primarySky mb-6">
             Lets Make Better <br /> World With Technology!
