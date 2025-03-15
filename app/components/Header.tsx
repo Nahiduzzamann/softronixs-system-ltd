@@ -7,15 +7,10 @@ import { motion } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
 import { usePathname } from "next/navigation";
 const links = [
-  { name: "Home", href: "/" },
-  {
-    name: "Link 1",
-    href: "/",
-    dropdown: ["Link 1", "Link 2", "Link 3"],
-  },
-  { name: "Link 2", href: "/" },
-  { name: "Link 3", href: "/", dropdown: ["Event 1", "Event 2"] },
-  { name: "Link 4", href: "/others", dropdown: ["Option 1", "Option 2"] },
+  { name: "HOME", href: "/" },
+  { name: "SERVICE", href: "/" },
+  { name: "PRODUCTS", href: "/" },
+  { name: "ABOUT US", href: "/", dropdown: ["Team", "Mission & Vission","Portfolio","Company"] },
 ];
 
 const Header = () => {
@@ -136,7 +131,7 @@ const Header = () => {
                   {link.dropdown && (
                     <ul className="absolute -left-8 hidden group-hover:block bg-primarySky  shadow-lg rounded-md pt-4 ">
                       {link.dropdown.map((item) => (
-                        <li className="w-36 hover:underline" key={item}>
+                        <li className="w-48 hover:underline" key={item}>
                           <Link
                             href={`${link.href}/${item
                               .toLowerCase()
