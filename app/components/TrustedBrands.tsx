@@ -12,10 +12,6 @@ const brands = [
   { name: "GOOVI", logo: "/Images/goovi.png" },
   { name: "Carbon", logo: "/Images/carbon.png" },
   { name: "GOOVI", logo: "/Images/goovi.png" },
-  { name: "Carbon", logo: "/Images/carbon.png" },
-  { name: "GOOVI", logo: "/Images/goovi.png" },
-  { name: "Carbon", logo: "/Images/carbon.png" },
-  { name: "GOOVI", logo: "/Images/goovi.png" },
 ];
 
 const TrustedBrands = () => {
