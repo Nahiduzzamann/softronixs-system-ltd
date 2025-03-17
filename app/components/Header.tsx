@@ -1,7 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { FaAlignRight, FaSearch } from "react-icons/fa";
+import {
+  FaAlignRight,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaSearch,
+  FaTwitter,
+} from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
@@ -10,7 +17,11 @@ const links = [
   { name: "HOME", href: "/" },
   { name: "SERVICE", href: "/" },
   { name: "PRODUCTS", href: "/" },
-  { name: "ABOUT US", href: "/", dropdown: ["Team", "Mission & Vission","Portfolio","Company"] },
+  {
+    name: "ABOUT US",
+    href: "/",
+    dropdown: ["Team", "Mission & Vission", "Portfolio", "Company"],
+  },
 ];
 
 const Header = () => {
@@ -65,29 +76,17 @@ const Header = () => {
         } `}
       >
         <div className="container mx-auto flex justify-between items-center px-3 h-[60px]">
-          <Link href="/">
-            {/* <Image
-              src={logo}
-              alt="Logo"
-              className="cursor-pointer w-20 md:w-32"
-            /> */}
-            Logo
-          </Link>
-          <div className="relative border border-primaryWhite mx-2 h-9">
-            <input
-              type="text"
-              placeholder="What are you looking for today?"
-              className="h-full bg-lightWhite  pl-2 pr-10 lg:w-96 w-full text-secondaryBlack  outline-none"
-            />
-            <button className="absolute right-0 top-0 bg-primaryYellow  h-full w-8 flex justify-center items-center hover:bg-primaryPurple transition-colors duration-300">
-              <FaSearch className=" text-primaryWhite " />
-            </button>
+          <div className="md:flex gap-3 items-center text-primaryWhite">
+            <div>+880 1571 744478</div>
+            <div>info@softronixs.com</div>
           </div>
-          <Link href="/">
-            <button className="bg-primaryWhite  text-primaryBlack hover:text-primaryWhite px-4 py-1 rounded-full hover:bg-primaryYellow  transition-colors duration-300 font-semibold">
-              Contact
-            </button>
-          </Link>
+
+          <div className="flex gap-2 md:gap-4 items-center text-primaryWhite text-xl">
+            <FaFacebook></FaFacebook>
+            <FaTwitter></FaTwitter>
+            <FaLinkedin></FaLinkedin>
+            <FaInstagram></FaInstagram>
+          </div>
         </div>
       </motion.div>
 
@@ -99,7 +98,9 @@ const Header = () => {
             ? { type: "spring", stiffness: 20 }
             : { type: "spring", stiffness: 70 }
         }
-        className={` bg-primaryBlack  z-50 w-full fixed top-[60px]  ${showShadow && "shadow-md"}`}
+        className={` bg-primaryBlack  z-50 w-full fixed top-[60px]  ${
+          showShadow && "shadow-md"
+        }`}
       >
         <div className="container mx-auto flex justify-between items-center px-3 md:h-[70px] h-[50px]">
           <Link className="hidden md:block text-primaryWhite" href="/">
@@ -115,8 +116,18 @@ const Header = () => {
              /> */}
             logo
           </Link>
+          <div className="relative border border-primaryWhite mx-2 h-9">
+            <input
+              type="text"
+              placeholder="What are you looking for today?"
+              className="h-full bg-primaryWhite  pl-2 pr-10 md:w-40 lg:w-96 w-full text-secondaryBlack  outline-none"
+            />
+            <button className="absolute right-0 top-0 bg-primaryYellow  h-full w-8 flex justify-center items-center hover:bg-primaryPurple transition-colors duration-300">
+              <FaSearch className=" text-primaryWhite " />
+            </button>
+          </div>
           <div className="flex gap-4">
-            <ul className="lg:flex space-x-6 items-center hidden">
+            <ul className="md:flex space-x-6 items-center hidden">
               {links.map((link) => (
                 <li key={link.name} className="relative group">
                   <Link
@@ -146,6 +157,11 @@ const Header = () => {
                   )}
                 </li>
               ))}
+              <Link href="/">
+                <button className="bg-primaryWhite  text-primaryBlack hover:text-primaryWhite px-4 py-1 rounded-full hover:bg-primaryYellow  transition-colors duration-300 font-semibold">
+                  Contact
+                </button>
+              </Link>
             </ul>
           </div>
           {isOpen ? (
@@ -156,7 +172,12 @@ const Header = () => {
               />
             </div>
           ) : (
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center gap-4">
+              <Link href="/">
+                <button className="bg-primaryWhite  text-primaryBlack hover:text-primaryWhite px-4 py-1 rounded-full hover:bg-primaryYellow  transition-colors duration-300 font-semibold">
+                  Contact
+                </button>
+              </Link>
               <FaAlignRight
                 onClick={toggleSidebar}
                 className="h-6 w-6 hover:scale-110 transition-transform duration-300 cursor-pointer text-primaryWhite   "
@@ -173,7 +194,12 @@ const Header = () => {
 };
 
 export default Header;
-const Sidebar = ({ isOpen, toggleSidebar }) => {
+interface SidebarProps {
+  isOpen: boolean;
+  toggleSidebar: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   const linkVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (index: number) => ({
@@ -183,7 +209,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     }),
   };
   // Links array
-  const links = ["Home", "About", "Services", "Contact"];
+  const links = ["Home", "Service", "Products","About Us", "Contact"];
   return (
     <>
       {/* Overlay - Click outside to close */}
