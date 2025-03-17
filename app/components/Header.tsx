@@ -15,11 +15,11 @@ import { IoIosArrowDown } from "react-icons/io";
 import { usePathname } from "next/navigation";
 const links = [
   { name: "HOME", href: "/" },
-  { name: "SERVICE", href: "/" },
-  { name: "PRODUCTS", href: "/" },
+  { name: "SERVICE", href: "/pages/service" },
+  { name: "PRODUCTS", href: "/pages/products" },
   {
     name: "ABOUT US",
-    href: "/",
+    href: "/pages/",
     dropdown: ["Team", "Mission & Vission", "Portfolio", "Company"],
   },
 ];
@@ -30,7 +30,6 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -132,7 +131,11 @@ const Header = () => {
                 <li key={link.name} className="relative group">
                   <Link
                     href={link.href}
-                    className="text-primaryWhite  font-semibold hover:text-primaryYellow"
+                    className={`${
+                      pathname === link.href
+                        ? "text-primaryYellow"
+                        : "text-primaryWhite"
+                    }   font-semibold hover:text-primaryYellow`}
                   >
                     {link.name}
                     {link.dropdown && (
@@ -194,6 +197,7 @@ const Header = () => {
 };
 
 export default Header;
+
 interface SidebarProps {
   isOpen: boolean;
   toggleSidebar: () => void;
@@ -209,7 +213,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
     }),
   };
   // Links array
-  const links = ["Home", "Service", "Products","About Us", "Contact"];
+  const links = ["Home", "Service", "Products", "About Us", "Contact"];
   return (
     <>
       {/* Overlay - Click outside to close */}
