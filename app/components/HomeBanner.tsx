@@ -61,10 +61,10 @@ const HomeBanner = () => {
                 {slides[current].title}
               </h1>
               <div className="flex gap-4 mt-4 justify-center md:justify-start pb-4 md:pb-0">
-                <button className="bg-primaryWhite text-primaryBlack font-medium px-5 py-2 rounded-full hover:bg-gray-200 transition">
+                <button className="bg-primaryYellow text-primaryWhite font-medium px-5 py-2 rounded-full hover:bg-yellow-600 transition">
                   {slides[current].button1}
                 </button>
-                <button className="border border-primaryWhite text-primaryWhite font-medium px-5 py-2 rounded-full hover:bg-primaryWhite hover:text-primaryBlack transition">
+                <button className="border border-primaryYellow text-primaryWhite font-medium px-5 py-2 rounded-full hover:bg-primaryWhite hover:text-primaryBlack transition">
                   {slides[current].button2}
                 </button>
               </div>
@@ -93,14 +93,14 @@ const HomeBanner = () => {
         {/* Navigation Buttons */}
         <button
           onClick={prevSlide}
-          className="absolute bottom-2 left-20 md:bottom-28 md:left-12 bg-white text-black rounded-full shadow-lg hover:bg-transparent hover:text-primaryWhite hover:border-2 border-primarySky transition flex justify-center items-center h-10 w-10"
+          className="absolute bottom-2 left-20 md:bottom-28 md:left-12 bg-white text-black rounded-full shadow-lg hover:bg-transparent hover:text-primaryWhite hover:border-2 border-primaryYellow transition flex justify-center items-center h-10 w-10"
         >
           <ChevronLeft size={24} />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute bottom-2 right-20 md:bottom-28 md:left-24  bg-white text-black rounded-full shadow-lg  transition flex justify-center items-center h-10 w-10 hover:text-primaryWhite hover:bg-transparent hover:border-2 border-primarySky "
+          className="absolute bottom-2 right-20 md:bottom-28 md:left-24  bg-white text-black rounded-full shadow-lg  transition flex justify-center items-center h-10 w-10 hover:text-primaryWhite hover:bg-transparent hover:border-2 border-primaryYellow "
         >
           <ChevronRight size={24} />
         </button>
