@@ -37,16 +37,11 @@ const HomeWhyChooseUs = () => {
               </h1>
 
               {/* Buttons */}
-              <div className="mt-6 flex gap-4">
+              <div className="mt-6 ">
+             
                 <Link
                 href='#'
-                  className="bg-primaryYellow text-primaryWhite px-6 py-3 rounded-md font-semibold"
-                >
-                  More Information →
-                </Link>
-                <Link
-                href='#'
-                  className="bg-primaryGreen text-primaryBlack px-6 py-3 rounded-md font-semibold border border-primaryYellow text-primaryWhite"
+                  className="bg-primaryGreen px-6 py-3 rounded-md font-semibold border border-primaryYellow text-primaryWhite hover:bg-primaryYellow transition-colors duration-300"
                 >
                   More Information →
                 </Link>

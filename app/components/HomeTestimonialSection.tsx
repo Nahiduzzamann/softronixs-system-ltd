@@ -53,7 +53,7 @@ const HomeTestimonialSection = () => {
   };
 
   return (
-    <div className="w-full bg-secondaryBlack pt-36 py-12 text-center">
+    <div className="w-full bg-secondaryBlack pt-36 py-12 text-center ">
       {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
@@ -74,7 +74,7 @@ const HomeTestimonialSection = () => {
       </motion.h1>
 
       {/* Slider Container */}
-      <div className="relative overflow-hidden w-full container mx-auto mt-10">
+      <div className=" relative overflow-hidden w-full container mx-auto mt-10">
         <motion.div
           className="flex "
           drag="x"
@@ -87,7 +87,7 @@ const HomeTestimonialSection = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              className="min-w-[320px] md:min-w-[350px] bg-primaryBlack p-6 rounded-lg shadow-lg mx-2"
+              className="min-w-[280px] md:min-w-[340px] bg-primaryBlack p-6 rounded-lg shadow-lg mx-2"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
