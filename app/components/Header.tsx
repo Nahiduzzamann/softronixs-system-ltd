@@ -19,7 +19,7 @@ const links = [
   { name: "PRODUCTS", href: "/pages/products" },
   {
     name: "ABOUT US",
-    href: "/pages/",
+    href: "/pages/contact-us",
     dropdown: ["Team", "Mission & Vission", "Portfolio", "Company"],
   },
 ];
@@ -160,10 +160,10 @@ const Header = () => {
                   )}
                 </li>
               ))}
-              <Link href="/">
-                <button className="bg-primaryWhite  text-primaryBlack hover:text-primaryWhite px-4 py-1 rounded-full hover:bg-primaryYellow  transition-colors duration-300 font-semibold">
+              <Link href="/pages/contact-us">
+                <div className="bg-primaryWhite  text-primaryBlack hover:text-primaryWhite px-4 py-1 rounded-full hover:bg-primaryYellow  transition-colors duration-300 font-semibold">
                   Contact
-                </button>
+                </div>
               </Link>
             </ul>
           </div>
