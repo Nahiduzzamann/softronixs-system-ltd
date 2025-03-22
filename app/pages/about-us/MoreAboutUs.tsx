@@ -4,40 +4,30 @@ import { motion } from "framer-motion";
 
 const processSteps = [
   {
-    title: "Discover",
+    title: "PRODUCT DEVELOPMENT",
     description:
-      "We follow a creative design discipline, where new designs are created from scratch.",
+      "Whether you are a start-up or an established business, we are ready to assist you at every stage of the software development life cycle — from conceptualization and consulting to development and support. We are also experts in many verticals and business domains, including e-Commerce, e-Learning, AdTech, Finance, Entertainment, and more. We build native, hybrid, and cross-platform apps that run on all major operating systems such as iOS and Android.",
   },
   {
-    title: "Define",
+    title: "PROJECT MANAGEMENT",
     description:
-      "We research, observe, understand, and analyze client demand during the planning phase.",
+      "We constantly focus on improving our method of agile development in distributed projects. The method is based on our training and experience with Scrum and developed further through our long experience with software development in Bangladesh. We have talented Project Managers and developers ready to work with you. With the usage of state of the art collaboration tools the team becomes a high performing distributed team.the goal and the business objectives.",
   },
   {
-    title: "Design",
+    title: "COLLABORATION",
     description:
-      "We design for humans, by humans. Our designs help companies reimagine their relationships with people.",
+      "Succeeding with distributed development and an offshore team is not always straightforward. Our on boarding program is a set of workshops that will help you develop the necessary skills to manage an offshore team. The program focuses on the barriers and the enablers to succeed in distributed teams. One of the goals is to ensure that your onshore team and the offshore team have a common perception of",
   },
   {
     title: "Develop",
     description:
-      "Product development helps you refine concepts into successful products that people love and are willing to pay for.",
-  },
-  {
-    title: "Deploy",
-    description:
-      "Optimized implementation and deployment processes to ensure commitments remain aligned.",
-  },
-  {
-    title: "Deliver",
-    description:
-      "We deliver high-quality projects to fuel your business for long-term success.",
+      "Product development helps you test and refine your concepts to transform them into successful products and services that people want and are willing to pay.",
   },
 ];
 
-const HomeProcessSection = () => {
+const MoreAboutUs = () => {
   return (
-    <div className=" bg-secondaryBlack pt-16 ">
+    <div className=" bg-secondaryBlack pt-16">
         <div className="relative w-full py-16 container mx-auto px-3">
       {/* Background with 3 Boxes */}
       <div className="absolute inset-0 flex justify-end">
@@ -76,7 +66,7 @@ const HomeProcessSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-3xl md:text-4xl font-bold text-primaryWhite mt-2"
           >
-            Our 6-D Process
+           More About us
           </motion.h1>
 
           {/* Steps */}
@@ -103,4 +93,4 @@ const HomeProcessSection = () => {
   );
 };
 
-export default HomeProcessSection;
+export default MoreAboutUs;

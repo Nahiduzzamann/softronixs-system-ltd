@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CgArrowRight } from "react-icons/cg";
 type FooterNavItem = {
   href?: string; // href is optional since locations don't have it
@@ -10,6 +11,7 @@ type FooterNav = {
   items: FooterNavItem[];
 };
 const Footer = () => {
+  const pathname = usePathname();
   const footerNavs: FooterNav[] = [
     {
       label: "Quick Links",
@@ -19,28 +21,28 @@ const Footer = () => {
           name: "Home",
         },
         {
-          href: "/",
+          href: "/pages/about-us",
           name: "About Us",
         },
         {
-          href: "/",
+          href: "/pages/service",
           name: "Services",
         },
         {
-          href: "/",
+          href: "/pages/portfolio",
           name: "Portfolio",
         },
         {
-          href: "/",
+          href: "/pages/contact-us",
           name: "Contact Us",
         },
         {
-          href: "/",
+          href: "/pages/blog",
           name: "Blog",
         },
         {
-          href: "/",
-          name: "Terms",
+          href: "/pages/team",
+          name: "Teams",
         },
       ],
     },
@@ -48,35 +50,35 @@ const Footer = () => {
       label: "Top Servics",
       items: [
         {
-          href: "/",
+          href: "#",
           name: "Software Development",
         },
         {
-          href: "/",
+          href: "#",
           name: "Mobile Application",
         },
         {
-          href: "/",
+          href: "#",
           name: "Web Application",
         },
         {
-          href: "/",
+          href: "#",
           name: "Web Design",
         },
         {
-          href: "/",
+          href: "#",
           name: "Brand Design & Graphics",
         },
         {
-          href: "/",
+          href: "#",
           name: "Digital Marcketing & SEO",
         },
         {
-          href: "/",
+          href: "#",
           name: "Social Media Marketing",
         },
         {
-          href: "/",
+          href: "#",
           name: "3D Animation",
         },
       ],
@@ -111,7 +113,10 @@ const Footer = () => {
             <div className="w-full lg:max-w-sm xl:max-w-xl">
               <img src="https://www.floatui.com/logo.svg" className="w-32" />
               <p className="leading-relaxed mt-2 text-justify text-[15px]">
-              Softronixs is a top-rated & Best Software Development, Website Design & Development, Digital Marketing, and Graphics Service Solution Company serving worldwide. Softronixs ensures the quality of your service to make you satisfied. 
+                Softronixs is a top-rated & Best Software Development, Website
+                Design & Development, Digital Marketing, and Graphics Service
+                Solution Company serving worldwide. Softronixs ensures the
+                quality of your service to make you satisfied.
               </p>
             </div>
             <form onSubmit={(e) => e.preventDefault()}>
@@ -139,7 +144,9 @@ const Footer = () => {
                     {el?.href ? (
                       <Link
                         href={el.href}
-                        className="hover:underline flex  hover:text-primaryPurple gap-1"
+                        className={`hover:underline flex  hover:text-primaryPurple gap-1 transition-all duration-300 hover:scale-105 ${
+                          pathname == el.href ? "text-primaryPurple" : ""
+                        }`}
                       >
                         <CgArrowRight className="text-primaryPurple mt-1 text-md"></CgArrowRight>
                         {el.name}

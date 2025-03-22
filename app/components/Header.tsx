@@ -19,8 +19,8 @@ const links = [
   { name: "PRODUCTS", href: "/pages/products" },
   {
     name: "ABOUT US",
-    href: "/pages/contact-us",
-    dropdown: ["Team", "Mission & Vission", "Portfolio", "Company"],
+    href: "/pages/about-us",
+    dropdown: ["Team", "Mission Vission", "Portfolio", "Company"],
   },
 ];
 
@@ -81,10 +81,10 @@ const Header = () => {
           </div>
 
           <div className="flex gap-2 md:gap-4 items-center text-primaryWhite text-xl">
-            <FaFacebook></FaFacebook>
-            <FaTwitter></FaTwitter>
-            <FaLinkedin></FaLinkedin>
-            <FaInstagram></FaInstagram>
+            <FaFacebook className="cursor-pointer hover:text-primaryYellow transition-all duration-300"></FaFacebook>
+            <FaTwitter className="cursor-pointer hover:text-primaryYellow transition-all duration-300"></FaTwitter>
+            <FaLinkedin className="cursor-pointer hover:text-primaryYellow transition-all duration-300"></FaLinkedin>
+            <FaInstagram className="cursor-pointer hover:text-primaryYellow transition-all duration-300"></FaInstagram>
           </div>
         </div>
       </motion.div>
@@ -133,9 +133,9 @@ const Header = () => {
                     href={link.href}
                     className={`${
                       pathname === link.href
-                        ? "text-primaryYellow"
+                        ? "text-primaryYellow "
                         : "text-primaryWhite"
-                    }   font-semibold hover:text-primaryYellow`}
+                    } transition-all  duration-300  font-semibold hover:text-primaryYellow`}
                   >
                     {link.name}
                     {link.dropdown && (
@@ -145,12 +145,17 @@ const Header = () => {
                   {link.dropdown && (
                     <ul className="absolute -left-8 hidden group-hover:block bg-primaryWhite  shadow-lg rounded-md pt-4 ">
                       {link.dropdown.map((item) => (
-                        <li className="w-48 hover:underline" key={item}>
+                        <li className="w-48" key={item}>
                           <Link
-                            href={`${link.href}/${item
+                            href={`/pages/${item
                               .toLowerCase()
                               .replace(" ", "-")}`}
-                            className="block px-4 py-2 hover:bg-primaryPurple  text-primaryBlack hover:text-primaryWhite transition-colors duration-300  "
+                            className={`block px-4 py-2 mt-1 hover:bg-primaryPurple  text-primaryBlack hover:text-primaryWhite transition-colors duration-300 ${
+                              pathname ==
+                              `/pages/${item.toLowerCase().replace(" ", "-")}`
+                                ? "bg-primaryPurple text-primaryWhite"
+                                : ""
+                            }`}
                           >
                             {item}
                           </Link>

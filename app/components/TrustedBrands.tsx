@@ -18,7 +18,7 @@ const TrustedBrands = () => {
   const scrollRef = useRef(null);
 
   return (
-    <div className="bg-primaryBlack py-10">
+    <div className="bg-secondaryBlack py-10">
       <div className="container mx-auto p-3 overflow-hidden">
         <h2 className="text-primarySky text-center text-xl font-semibold mb-6">
           Trusted by International Brands

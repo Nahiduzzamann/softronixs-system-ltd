@@ -38,9 +38,8 @@ const HomeWhyChooseUs = () => {
 
               {/* Buttons */}
               <div className="mt-6 ">
-             
                 <Link
-                href='#'
+                  href="#"
                   className="bg-primaryGreen px-6 py-3 rounded-md font-semibold border border-primaryYellow text-primaryWhite hover:bg-primaryYellow transition-colors duration-300"
                 >
                   More Information →
@@ -58,12 +57,14 @@ const HomeWhyChooseUs = () => {
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   className="bg-primaryBlack/80 border border-primaryGray p-6 rounded-xl shadow-lg flex items-center space-x-3"
                 >
-                  <span className="text-primarySky text-2xl">
-                    {feature.icon}
-                  </span>
-                  <h3 className="text-primaryWhite font-semibold">
-                    {feature.title}
-                  </h3>
+                  <div className="text-center lg:flex items-center gap-2">
+                    <span className="text-primarySky text-2xl">
+                      {feature.icon}
+                    </span>
+                    <h3 className="text-primaryWhite font-semibold">
+                      {feature.title}
+                    </h3>
+                  </div>
                 </motion.div>
               ))}
             </div>
