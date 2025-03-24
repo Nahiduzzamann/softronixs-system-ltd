@@ -49,10 +49,10 @@ const contactData: ContactInfo[] = [
 
 const ContactUs = () => {
   return (
-    <section className="bg-primaryBlack py-10 px-6">
-      <div className="container mx-auto">
+    <section className="bg-secondaryBlack px-3">
+      <div className="container mx-auto py-16">
         {/* Title */}
-        <h2 className="text-primaryWhite text-center text-2xl font-bold mb-6">
+        <h2 className="text-primaryWhite text-center text-2xl font-bold mb-6 bg-gradient-to-r from-primaryBlack to-secondaryBlack py-16">
           Contact Us
         </h2>
 

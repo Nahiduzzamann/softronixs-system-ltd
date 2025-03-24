@@ -10,9 +10,9 @@ import TrustedBrands from "@/app/components/TrustedBrands";
 import TeamCardSEO from "@/app/components/TeamCardCEO";
 export default function page() {
   return (
-    <div className="w-full py-16 bg-gradient-to-b bg-secondaryBlack text-primaryWhite">
+    <div className="w-full  bg-secondaryBlack text-primaryWhite">
       {/* Section Wrapper */}
-      <div className="container mx-auto p-3">
+      <div className="container py-16  mx-auto p-3 bg-gradient-to-r from-primaryBlack to-secondaryBlack">
         {/* Header */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -22,9 +22,8 @@ export default function page() {
         >
           Softronixs - Services
         </motion.h2>
-
-        <HomeHeroSection></HomeHeroSection>
       </div>
+      <HomeHeroSection></HomeHeroSection>
       <HelpSection></HelpSection>
       <FundamentalSection></FundamentalSection>
       <ExpertiseSection></ExpertiseSection>

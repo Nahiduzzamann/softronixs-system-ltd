@@ -10,15 +10,15 @@ import FAQSection from "./FAQSection";
 
 const ServicesPage = () => {
   return (
-    <div className="w-full py-16 bg-gradient-to-b bg-secondaryBlack text-primaryWhite">
+    <div className="w-full  bg-gradient-to-b bg-secondaryBlack text-primaryWhite">
       {/* Section Wrapper */}
-      <div className="container mx-auto p-3">
+      <div className="container mx-auto p-3 ">
         {/* Header */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-extrabold text-center"
+          className="text-3xl md:text-4xl font-extrabold text-center bg-gradient-to-r from-primaryBlack to-secondaryBlack py-16"
         >
           Softronixs - Services
         </motion.h2>
